@@ -7,6 +7,22 @@ conda env create -f environment.yml
 conda activate pushdown-lm
 ```
 
+## Quickstart (I just want to run inference on some sentences)
+
+Download a pre-trained pushdown-LM (16 layers transformer with pushdown self-attention trained on `BLLIP-LG`):
+```
+# install huggingface-cli
+pip install -U "huggingface_hub[cli]" 
+huggingface-cli download smurty/pushdown-bllip
+```
+
+We provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses. Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following (assuming the above command downloaded the model to `/path/to/save/dir`):
+
+```
+cd eval_utils
+python eval_pushdown_model.py settings.model_dir=/path/to/save/dir settings.eval_mode=beam settings.dataset="../data_utils/sample_sents.txt"
+```
+
 ## Get Datasets
 
 ### Training on BLLIP
@@ -22,7 +38,7 @@ This script tokenizes the dataset using the GPT2 tokenizer, and converts every p
 
 ### Training on WikiTrees
 
-WIP. Please send Shikhar Murty an email (can be found on the paper link) if you need the WikiTrees dataset.
+WIP. Please send Shikhar Murty an email (can be found on the paper link) if you urgently need the WikiTrees dataset.
 
 ## Quickstart (I just want to run inference)
 
@@ -53,14 +69,7 @@ python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-de
 
 
 ## Inference / Evaluation
-In general, we provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses.
 
-Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following:
-
-```
-cd eval_utils
-python eval_pushdown_model.py settings.model_dir=/path/to/save/dir settings.eval_mode=beam settings.dataset="../data_utils/sample_sents.txt"
-```
 
 
 ### Evaluating Dyck Generalization
