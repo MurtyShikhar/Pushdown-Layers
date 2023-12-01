@@ -102,7 +102,7 @@ def eval_lm(model_interface, val_datasets, best_accs, device, num_steps, collato
             attachment_acc /= stack_total
         return np.exp(loss_curr / total), attachment_acc
 
-    eval_batch_size =16
+    eval_batch_size = 16
     plots = {}
     curr_accs = {}
     for key, val_dataset in val_datasets.items():
@@ -121,9 +121,6 @@ def eval_lm(model_interface, val_datasets, best_accs, device, num_steps, collato
     plots.update({"best/{}": v for k, v in best_accs.items()})
     plotting_util(plots, num_steps)
     return best_accs, curr_accs
-
-
-
 
 
 def plotting_util(dict_of_elems, step):
@@ -145,7 +142,6 @@ def plotting_util(dict_of_elems, step):
             assert False, f"Invalid data type {type(v)}"
     wandbdict["iteration"] = step
     wandb.log(wandbdict)
-
 
 
 def eval_func(model, validation, tokenizer, best_acc, device):
@@ -182,6 +178,7 @@ def eval_func(model, validation, tokenizer, best_acc, device):
     else:
         return best_acc
 
+
 def save_callback(model, optimizer, scheduler, save_dir, num_steps):
     state = {
         "step": num_steps,
@@ -210,8 +207,8 @@ def train_loop(
     max_grad_norm = 3
     train_batch_size = 8
     accum_steps = 8
-    eval_every = 3000
-    max_steps = 300000
+    eval_every = args.eval_every
+    max_steps = args.max_steps
 
     opt = get_opt(args.lr, model)
     scheduler = get_scheduler(opt, max_steps)

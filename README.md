@@ -32,6 +32,10 @@ Suppose you have some text, parsed according to the above pre-processing scheme.
 Note: This repository uses WandB for logging. Make sure you set your WandB account before training.
 
 ### Pushdown LMs on Dyck
+To train 6 layer pushdown LMs on the `Dyck` dataset, run:
+```
+train_transformers.py train.dataset=dyck train.use_stack_tape=True train.vec_dim=128 train.callback=True train.save_dir=dyck_model-with-stack-acc-mlp-stack-key-modulator +recursive_layer.compose_keys_and_stack_info=True train.max_steps=10000 train.eval_every=1000
+```
 
 ### Pushdown LMs on BLLIP
 
@@ -49,12 +53,28 @@ python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-de
 
 
 ## Inference / Evaluation
+In general, we provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses.
+
+Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following:
+
+```
+cd eval_utils
+python eval_pushdown_model.py settings.model_dir=/path/to/save/dir settings.eval_mode=beam settings.dataset="../data_utils/sample_sents.txt"
+```
+
+
+### Evaluating Dyck Generalization
+To run the depth / length generalization eval from the paper, run the script: `eval_utils/eval_dyck.py`. Here is one example
+
+```
+cd eval_utils
+python eval_dyck.py model_name=/path/to/save/dir/ckpt.pickle eval_type=depth 
+```
 
 ### Preprocessed BLIMP (for evaluation)
 
 ### SyntaxGym (for surprisal evaluation)
 
-### Evaluating Dyck Generalization
 
 ### Evaluating on BLLIP
 
