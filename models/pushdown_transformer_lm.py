@@ -115,13 +115,16 @@ class StackPredictor(PushdownAttention):
             # depth_embed_biases has shape [n_batch, n_dest, n_src, vec_dim]
             depth_embed_biases = self.depth_embed(stack_info.int())
 
-            
-            k_prime = self.data_to_k_prime(attend_to).unsqueeze(1).repeat(1, n_dest, 1, 1)
+            k_prime = (
+                self.data_to_k_prime(attend_to).unsqueeze(1).repeat(1, n_dest, 1, 1)
+            )
             ## k_stack_composed has shape [n_batch, n_dest, n_src, vec_dim]
             if self.additive_composition:
-                k_stack_composed = k_prime + depth_embed_biases 
+                k_stack_composed = k_prime + depth_embed_biases
             else:
-                k_stack_composed = self.key_and_stack_info_composer(torch.cat([k_prime, depth_embed_biases], dim=-1))
+                k_stack_composed = self.key_and_stack_info_composer(
+                    torch.cat([k_prime, depth_embed_biases], dim=-1)
+                )
             logits = torch.matmul(
                 q_stack.unsqueeze(2), k_stack_composed.transpose(2, 3)
             ).squeeze(2)
@@ -265,7 +268,7 @@ class PushdownLM(TransformerLM):
         return ret_dict
 
     def _take_step_with_stack_tape(
-        self, src, trafo_state, stack_state, list_of_reduced, step, return_preds = False
+        self, src, trafo_state, stack_state, list_of_reduced, step, return_preds=False
     ):
         next_tgt = torch.cat(
             [
@@ -283,7 +286,7 @@ class PushdownLM(TransformerLM):
             .transpose(0, 1)
             .to(src.device)
         )
-        output, attachment_logits = self.trafo.encoder.one_step_forward(
+        output, _ = self.trafo.encoder.one_step_forward(
             trafo_state,
             next_tgt,
             src_length_mask=src_length_mask,

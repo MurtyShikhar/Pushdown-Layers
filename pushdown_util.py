@@ -122,89 +122,6 @@ def tokenizer_helper(
 
 
 @torch.no_grad()
-def make_preds_with_greedy_decoding(
-    lm,
-    tokenizer,
-    sents,
-    gpu_id=0,
-    do_sample=False,
-    silent=False,
-    get_final_answer=False,
-):
-    """
-    Use the language model to make predictions on the given sentences.
-    But, use greedy decoding to infer the parse structure.
-    Also, if do_sample is True, then use sampling instead of greedy decoding.
-
-    Output:
-        - logprob of each sentence
-        - stack_info: list of stack_info for each sentence
-    """
-    data_collator = collate.VarLengthCollate(None)
-    batch_size = 32
-    st = 0
-    device = torch.device("cuda:{}".format(gpu_id))
-    all_attachment_decisions = []
-    all_stack_logprobs = []
-
-    all_sent_logprobs = []
-    all_answers = []
-
-    def combine(l1, l2):
-        return [x + torch.tensor(y).to(x.device) for x, y in zip(l1, l2)]
-
-    # if silent, then don't print progress bar
-    with tqdm(total=len(sents), disable=silent) as progress_bar:
-        while st < len(sents):
-            en = min(len(sents), st + batch_size)
-            cslice = sents[st:en]
-            inputs, input_lens = tokenizer_helper(
-                lm, tokenizer, data_collator, cslice, parse_slice_or_labels=None
-            )
-            inputs = inputs.to(device)
-            input_lens = input_lens.to(device)
-            # TODO: modify run_greedy_with_stack to return stack_info
-            (
-                final_preds,
-                all_str_logits_curr,
-                all_attachment_decisions_curr,
-                all_stack_logprobs_curr,
-            ) = lm.run_greedy_with_stack(
-                inputs,
-                input_lens,
-                get_str_logits=True,
-                get_stack_info=True,
-                do_sample=do_sample,
-                get_final_answer=get_final_answer,
-            )
-            if get_final_answer:
-                ## bs x max_len x vocab
-                preds_curr = [pred.argmax().item() for pred in final_preds]
-                all_answers += preds_curr
-                all_attachment_decisions += [
-                    stack_pred[:l]
-                    for stack_pred, l in zip(all_attachment_decisions_curr, input_lens)
-                ]
-            else:
-                logprobs_curr = compute_per_token_logprob(
-                    lm, all_str_logits_curr, inputs, input_lens
-                )
-                all_attachment_decisions += [
-                    stack_pred[:l]
-                    for stack_pred, l in zip(all_attachment_decisions_curr, input_lens)
-                ]
-                all_stack_logprobs += all_stack_logprobs_curr
-                all_sent_logprobs += combine(logprobs_curr, all_stack_logprobs_curr)
-
-            progress_bar.update(en - st)
-            st = en
-    if get_final_answer:
-        return all_answers, all_attachment_decisions
-    else:
-        return all_sent_logprobs, all_stack_logprobs, all_attachment_decisions
-
-
-@torch.no_grad()
 def make_preds_base_model(
     lm, tokenizer, sents, gpu_id=0, get_final_answer=False, get_attn_matrices=False
 ):
@@ -293,7 +210,9 @@ def make_preds_with_given_trees(
             en = min(len(sents), st + batch_size)
             sent_slice = sents[st:en]
             parse_slice = parses[st:en]
-            import pdb; pdb.set_trace();
+            import pdb
+
+            pdb.set_trace()
             inputs, input_lens, stack_labels, stack_tapes = tokenizer_helper(
                 lm,
                 tokenizer,

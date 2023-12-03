@@ -153,42 +153,6 @@ def compute_penalty_matrices(dyck_s, as_bias=False):
         return stack_repr
 
 
-def run_lm_decoding(tokenizer, lm, prefixes, gpu_id):
-    data_collator = collate.VarLengthCollate(None)
-    max_decoding_steps = 50
-
-    # the tokenizer just adds an <SOS> token to the front of the string
-    def tokenizer_helper(inp_slice):
-        inp_list = [tokenizer(s) for s in inp_slice]
-        in_lens = [len(s) for s in inp_list]
-
-        inp_to_collate = [{"in": x, "in_len": y} for x, y in zip(inp_list, in_lens)]
-        inp = data_collator(inp_to_collate)
-        in_len = inp["in_len"].long()
-        return inp["in"].transpose(0, 1), in_len
-
-    batch_size = 128
-    st = 0
-    device = torch.device("cuda:{}".format(gpu_id))
-    decoded_sents = []
-    while st < len(prefixes):
-        en = min(len(prefixes), st + batch_size)
-        cslice = prefixes[st:en]
-        inputs, input_lens = tokenizer_helper(cslice)
-        inputs = inputs.to(device)
-        input_lens = input_lens.to(device)
-        with torch.no_grad():
-            outputs, stack_out = lm.run_greedy(inputs, input_lens, max_decoding_steps)
-            preds = outputs["data"].argmax(axis=-1)
-            out_lens = outputs["length"]
-            for pred, out_len in zip(preds, out_lens):
-                decoded_sents.append(pred[:out_len].tolist())
-        st = en
-    return decoded_sents, stack_out
-
-
-
-
 
 
 def compute_perplexity(lm, str_logits, inputs, input_lens):
@@ -206,51 +170,6 @@ def compute_perplexity(lm, str_logits, inputs, input_lens):
     loss_curr = layers.cross_entropy(str_logits, targets, reduction="none")
     loss_curr = loss_curr.reshape_as(targets) * len_mask
     return loss_curr.sum().cpu().numpy(), len_mask.sum().item()
-
-
-def make_preds_stack_teacher_force_x(tokenizer, lm, prefixes, gpu_id, is_dyck=True):
-    data_collator = collate.VarLengthCollate(None)
-
-    batch_size = 64
-    st = 0
-    device = torch.device("cuda:{}".format(gpu_id))
-    final_logprobs = []
-    all_str_logits = []
-
-    loss = 0.0
-    total = 0.0
-    # the tokenizer just adds an <SOS> token to the front of the string
-    def tokenizer_helper(inp_slice):
-        inp_list = [tokenizer(s) for s in inp_slice]
-        in_lens = [len(s) for s in inp_list]
-
-        inp_to_collate = [{"in": x, "in_len": y} for x, y in zip(inp_list, in_lens)]
-        inp = data_collator(inp_to_collate)
-        in_len = inp["in_len"].long()
-        return inp["in"].transpose(0, 1), in_len
-
-    with tqdm(total=len(prefixes)) as progress_bar:
-        while st < len(prefixes):
-            en = min(len(prefixes), st + batch_size)
-            cslice = prefixes[st:en]
-            inputs, input_lens = tokenizer_helper(cslice)
-            inputs = inputs.to(device)
-            input_lens = input_lens.to(device)
-            with torch.no_grad():
-                logprobs_curr, all_str_logits_curr = lm.run_greedy_with_stack(
-                    inputs, input_lens, get_str_logits=True
-                )
-                final_logprobs += logprobs_curr
-                loss_curr, total_curr = compute_perplexity(
-                    lm, all_str_logits_curr, inputs, input_lens
-                )
-                loss += loss_curr
-                total += total_curr
-
-            progress_bar.update(en - st)
-            st = en
-    final_prob = torch.stack(final_logprobs, dim=0)
-    return F.softmax(final_prob, dim=1), np.exp(loss / total)
 
 
 def get_attn_flows(attn_list, bs):

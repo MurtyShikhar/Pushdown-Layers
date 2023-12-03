@@ -21,12 +21,14 @@ hf_hub_download(repo_id="smurty/pushdown-bllip", filename="model.pt", local_dir=
 hf_hub_download(repo_id="smurty/pushdown-bllip", filename="vocab.pkl", local_dir="bllip-lg");
 ```
 
-We provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses. Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following (assuming the above command downloaded the model to `/path/to/save/dir`):
+We provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses. Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following:
 
 ```
 cd eval_utils
-python eval_pushdown_model.py settings.model_dir=/path/to/save/dir settings.eval_mode=beam settings.dataset="../data_utils/sample_sents.txt"
+python eval_pushdown_model.py settings.model_dir=../bllip-lg settings.eval_mode=beam settings.dataset="../data_utils/sample_sents.txt" settings.shard_id=-1 settings.dir_name=sent_outputs
 ```
+
+
 
 ## Get Datasets
 
