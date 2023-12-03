@@ -1,0 +1,133 @@
+{
+    "meta": {
+        "name": "nn-nv-rpl",
+        "metric": "sum",
+        "comment": "Simple NN/NV ambiguity",
+        "reference": "MacDonald 1993",
+        "author": "Roger Levy"
+    },
+    "region_meta": {
+        "1": "det",
+        "2": "n",
+        "3": "nv",
+        "4": "resolution",
+        "5": "rest"
+    },
+    "predictions": [
+        {
+            "type": "formula",
+            "formula": "(5;%nn_ambig%)>(5;%nn_unambig%)"
+        },
+        {
+            "type": "formula",
+            "formula": "(5;%nv_ambig%)>(5;%nv_unambig%)"
+        }
+    ],
+    "items": [
+        {
+            "item_number": 1,
+            "conditions": [
+                {
+                    "condition_name": "nn_ambig",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "company"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "supplies"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "were"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "all gone"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "nn_unambig",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "company's"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "supplies"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "were"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "all gone"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "nv_ambig",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "company"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "supplies"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "services we need"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "nv_unambig",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "company"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "supplied"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "services we need"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2903 @@
+{
+    "meta": {
+        "name": "fgd-embed4",
+        "metric": "sum",
+        "comment": "The following prediction should be relatively EASY (getting the differences-of-differences interaction in the right direction) #Prediction [(6;%what_no-gap%)-(6;%that_no-gap%)] + [(7;%that_gap%)-(7;%what_gap%)]>0  The following prediction should be relatively HARD (getting the direction of the that vs. what contrast right in both the gap and no-gap conditions) Testing whether models can thread filler-gap dependency through three layers of sentential embeddings without sentential complementizers",
+        "reference": "Wilcox et al. 2018",
+        "author": "Ethan Wilcox"
+    },
+    "region_meta": {
+        "1": "prefix",
+        "2": "comp",
+        "3": "embedding",
+        "4": "subj",
+        "5": "verb",
+        "6": "Unnamed: 7",
+        "7": "continuation"
+    },
+    "predictions": [
+        {
+            "type": "formula",
+            "formula": "[(6;%what_no-gap%)>(6;%that_no-gap%)] & [(7;%what_gap%)<(7;%that_gap%)]"
+        }
+    ],
+    "items": [
+        {
+            "item_number": 1,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our mother said her friend remarked that the park attendant reported the cop thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "your friend"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "threw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "into the trash can"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our mother said her friend remarked that the park attendant reported the cop thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "your friend"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "threw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "into the trash can"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our mother said her friend remarked that the park attendant reported the cop thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "your friend"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "threw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the plastic"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "into the trash can"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our mother said her friend remarked that the park attendant reported the cop thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "your friend"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "threw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the plastic"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "into the trash can"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 2,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The accountant wondered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "who"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the security guard believed his friend knew the assistant reported her colleague suspected"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the secretary"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "introduced"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The accountant wondered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the security guard believed his friend knew the assistant reported her colleague suspected"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the secretary"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "introduced"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The accountant wondered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "who"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the security guard believed his friend knew the assistant reported her colleague suspected"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the secretary"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "introduced"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the new woman"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The accountant wondered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the security guard believed his friend knew the assistant reported her colleague suspected"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the secretary"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "introduced"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the new woman"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friend"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 3,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The assistant told me"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the man knew his friend recalled the woman said her colleague saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the pilot"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his family"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The assistant told me"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the man knew his friend recalled the woman said her colleague saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the pilot"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his family"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The assistant told me"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the man knew his friend recalled the woman said her colleague saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the pilot"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the package"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his family"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The assistant told me"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the man knew his friend recalled the woman said her colleague saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the pilot"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the package"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his family"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 4,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the delivery boy remarked that the worker said that the gardener knew the maid remembers"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the funny actor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "about the woman"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the delivery boy remarked that the worker said that the gardener knew the maid remembers"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the funny actor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "about the woman"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the delivery boy remarked that the worker said that the gardener knew the maid remembers"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the funny actor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a story"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "about the woman"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the delivery boy remarked that the worker said that the gardener knew the maid remembers"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the funny actor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a story"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "about the woman"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 5,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The neighbors found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother heard the newspaper reported the mayor said his assistant saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young woman"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "bought"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The neighbors found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother heard the newspaper reported the mayor said his assistant saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young woman"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "bought"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The neighbors found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother heard the newspaper reported the mayor said his assistant saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young woman"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "bought"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a gift"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The neighbors found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother heard the newspaper reported the mayor said his assistant saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young woman"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "bought"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a gift"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her parents"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 6,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friend knows"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the judge thought the cop said the man testified his friend reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the successful architect"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "handed"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her mother"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friend knows"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the judge thought the cop said the man testified his friend reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the successful architect"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "handed"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her mother"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friend knows"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the judge thought the cop said the man testified his friend reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the successful architect"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "handed"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "an award"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her mother"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friend knows"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the judge thought the cop said the man testified his friend reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the successful architect"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "handed"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "an award"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for her mother"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 7,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The commissioner discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the report stated the television host thought the man reported the lawyer said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the police detective"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "lent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the man"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The commissioner discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the report stated the television host thought the man reported the lawyer said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the police detective"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "lent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the man"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The commissioner discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the report stated the television host thought the man reported the lawyer said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the police detective"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "lent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "some money"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the man"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The commissioner discovered"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the report stated the television host thought the man reported the lawyer said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the police detective"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "lent"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "some money"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the man"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 8,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the accountant said his colleague recalled the partners knew their accountant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the investor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "repaid"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the criminal kingpin "
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the accountant said his colleague recalled the partners knew their accountant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the investor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "repaid"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the criminal kingpin "
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the accountant said his colleague recalled the partners knew their accountant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the investor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "repaid"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "his debt"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the criminal kingpin "
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the accountant said his colleague recalled the partners knew their accountant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the investor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "repaid"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "his debt"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the criminal kingpin "
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 9,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the secretary said the journalist remarked that the workers said their representatives think"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the business man"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "promised"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the factory workers"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the secretary said the journalist remarked that the workers said their representatives think"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the business man"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "promised"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the factory workers"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the secretary said the journalist remarked that the workers said their representatives think"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the business man"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "promised"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a raise"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the factory workers"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the secretary said the journalist remarked that the workers said their representatives think"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the business man"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "promised"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a raise"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the factory workers"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 10,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The newspaper reported"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the investigator thought the businessman believed the banker said his friend believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the boss"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sold"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The newspaper reported"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the investigator thought the businessman believed the banker said his friend believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the boss"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sold"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The newspaper reported"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the investigator thought the businessman believed the banker said his friend believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the boss"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sold"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a car"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his friend"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The newspaper reported"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the investigator thought the businessman believed the banker said his friend believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the boss"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "sold"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a car"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his friend"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 11,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "Her friend found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend believed the professor said his colleague noticed their students recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the visitor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the guests"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "Her friend found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend believed the professor said his colleague noticed their students recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the visitor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the guests"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "Her friend found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend believed the professor said his colleague noticed their students recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the visitor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a story"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the guests"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "Her friend found out"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend believed the professor said his colleague noticed their students recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the visitor"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "told"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a story"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to the guests"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 12,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the painter believed his rival suspected the man said his friend recalls"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the suffering artist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "saw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "at the museum"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the painter believed his rival suspected the man said his friend recalls"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the suffering artist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "saw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "at the museum"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the painter believed his rival suspected the man said his friend recalls"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the suffering artist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "saw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a painting"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "at the museum"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the painter believed his rival suspected the man said his friend recalls"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the suffering artist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "saw"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a painting"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "at the museum"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 13,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The novel revealed"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our friend thought the reporter knows her contact said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young politician"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "said"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his donors"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The novel revealed"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our friend thought the reporter knows her contact said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young politician"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "said"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his donors"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The novel revealed"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our friend thought the reporter knows her contact said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young politician"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "said"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "something"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his donors"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The novel revealed"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "our friend thought the reporter knows her contact said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young politician"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "said"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "something"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to his donors"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 14,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my neighbor said her associate knew a friend thinks her sister believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young professional"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "assembled"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for his parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my neighbor said her associate knew a friend thinks her sister believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young professional"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "assembled"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for his parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my neighbor said her associate knew a friend thinks her sister believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young professional"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "assembled"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the bed"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for his parents"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my neighbor said her associate knew a friend thinks her sister believes"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the young professional"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "assembled"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the bed"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "for his parents"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 15,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "their friend said the secretary believed the worker thinks his boss reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the elderly lady"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the bus"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "their friend said the secretary believed the worker thinks his boss reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the elderly lady"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the bus"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "their friend said the secretary believed the worker thinks his boss reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the elderly lady"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a quarter"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the bus"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "their friend said the secretary believed the worker thinks his boss reported"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the elderly lady"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a quarter"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the bus"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 16,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friends all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her friend knew the delivery man believed the cop said his partner recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the single mother"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "described"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friends"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friends all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her friend knew the delivery man believed the cop said his partner recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the single mother"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "described"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friends"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friends all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her friend knew the delivery man believed the cop said his partner recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the single mother"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "described"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "her woes"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friends"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "My friends all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her friend knew the delivery man believed the cop said his partner recalled"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the single mother"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "described"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "her woes"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her friends"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 17,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The visitor said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "who"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend said her mother knew the clerk stated his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the human resources officer"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "talked with"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in her office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The visitor said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend said her mother knew the clerk stated his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the human resources officer"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "talked with"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in her office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The visitor said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "who"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend said her mother knew the clerk stated his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the human resources officer"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "talked with"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the new manager"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in her office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The visitor said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "my friend said her mother knew the clerk stated his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the human resources officer"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "talked with"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the new manager"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in her office"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 18,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the woman believed the secretary said her friend recalled a colleague thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the five star general"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in the office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the woman believed the secretary said her friend recalled a colleague thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the five star general"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in the office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the woman believed the secretary said her friend recalled a colleague thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the five star general"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a gun"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in the office"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "I know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the woman believed the secretary said her friend recalled a colleague thinks"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the five star general"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "found"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a gun"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "in the office"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 19,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The colleagues realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother stated a friend said her husband knew his brother said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the journalist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "discovered"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "two weeks ago"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The colleagues realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother stated a friend said her husband knew his brother said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the journalist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "discovered"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "two weeks ago"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The colleagues realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother stated a friend said her husband knew his brother said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the journalist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "discovered"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the bribery"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "two weeks ago"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "The colleagues realized"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "her mother stated a friend said her husband knew his brother said"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the journalist"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "discovered"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the bribery"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "two weeks ago"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 20,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "She said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the politician stated his press secretary said the chief of staff thought his assistant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the reporter"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "put"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the table"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "She said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the politician stated his press secretary said the chief of staff thought his assistant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the reporter"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "put"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the table"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "She said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the politician stated his press secretary said the chief of staff thought his assistant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the reporter"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "put"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the microphone"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the table"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "She said"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the politician stated his press secretary said the chief of staff thought his assistant suspects"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the reporter"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "put"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "the microphone"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "on the table"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "item_number": 21,
+            "conditions": [
+                {
+                    "condition_name": "what_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the old man thinks the woman knows the young boy said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the teacher"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "gave"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her students"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the old man thinks the woman knows the young boy said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the teacher"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "gave"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": ""
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her students"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "what_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "what"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the old man thinks the woman knows the young boy said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the teacher"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "gave"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a test"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her students"
+                        }
+                    ]
+                },
+                {
+                    "condition_name": "that_no-gap",
+                    "regions": [
+                        {
+                            "region_number": 1,
+                            "content": "We all know"
+                        },
+                        {
+                            "region_number": 2,
+                            "content": "that"
+                        },
+                        {
+                            "region_number": 3,
+                            "content": "the old man thinks the woman knows the young boy said his friend saw"
+                        },
+                        {
+                            "region_number": 4,
+                            "content": "the teacher"
+                        },
+                        {
+                            "region_number": 5,
+                            "content": "gave"
+                        },
+                        {
+                            "region_number": 6,
+                            "content": "a test"
+                        },
+                        {
+                            "region_number": 7,
+                            "content": "to her students"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
