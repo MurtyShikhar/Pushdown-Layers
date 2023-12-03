@@ -69,10 +69,8 @@ dependencies:
   - pip:
     - absl-py==1.0.0
     - accelerate==0.23.0
-    - aiobotocore==2.4.2
     - aiohttp==3.7.4.post0
     - aioitertools==0.11.0
-    - allennlp==2.9.3
     - antlr4-python3-runtime==4.9.3
     - anyio==3.6.2
     - anykeystore==0.2
@@ -93,9 +91,6 @@ dependencies:
     - bleach==3.3.0
     - blessed==1.20.0
     - blis==0.7.4
-    - boto3==1.23.1
-    - botocore==1.26.10
-    - cached-path==1.1.2
     - cachetools==5.0.0
     - captum==0.4.0
     - catalogue==2.0.6
@@ -126,7 +121,6 @@ dependencies:
     - docker-pycreds==0.4.0
     - einops==0.6.1
     - emoji==1.6.1
-    - en-core-web-sm==3.2.0
     - entrypoints==0.3
     - evaluate==0.3.0
     - fairscale==0.4.6
@@ -134,9 +128,7 @@ dependencies:
     - feedparser==6.0.8
     - filelock==3.6.0
     - fire==0.5.0
-    - flash-attn==1.0.5
     - fsspec==2022.10.0
-    - fused-dense-lib==0.0.0
     - future==0.18.2
     - gitdb==4.0.7
     - gitpython==3.1.24
@@ -157,7 +149,6 @@ dependencies:
     - hydra-colorlog==1.2.0
     - hydra-core==1.3.2
     - idna==2.10
-    - imageio==2.21.0
     - importlib-metadata==4.11.3
     - importlib-resources==5.2.2
     - iniconfig==1.1.1
@@ -275,7 +266,6 @@ dependencies:
     - python-multipart==0.0.6
     - python3-openid==3.2.0
     - pytokenizations==0.7.2
-    - pytorch-lightning==2.0.2
     - pytz==2021.1
     - pyyaml==5.4.1
     - pyzmq==22.1.0
@@ -288,7 +278,6 @@ dependencies:
     - requests-oauthlib==1.3.1
     - responses==0.18.0
     - rich==13.3.5
-    - rotary-emb==0.1
     - rsa==4.8
     - s3fs==2022.10.0
     - s3transfer==0.5.2
@@ -333,23 +322,20 @@ dependencies:
     - testpath==0.5.0
     - thinc==8.0.15
     - threadpoolctl==3.0.0
-    - tiktoken==0.4.0
     - tokenizers==0.14.0
     - tomli==2.0.1
-    - torch==1.9.0
+    - torch==2.0.1
     - torch-struct==0.5
-    - torchaudio==0.9.0
     - torchmetrics==0.11.4
-    - torchvision==0.10.0
+    - torchvision
     - tornado==6.1
     - tqdm==4.62.3
     - traitlets==5.9.0
     - transaction==3.1.0
     - transformers==4.34.0
     - translationstring==1.4
-    - triton==2.0.0
     - typer==0.4.1
-    - typing-extensions==3.10.0.0
+    - typing-extensions
     - urllib3==1.26.6
     - uvicorn==0.22.0
     - velruse==1.1.1
@@ -365,7 +351,6 @@ dependencies:
     - wrapt==1.15.0
     - wtforms==3.0.1
     - wtforms-recaptcha==0.3.2
-    - xentropy-cuda-lib==0.1
     - xxhash==2.0.2
     - yarl==1.7.0
     - yaspin==2.1.0
