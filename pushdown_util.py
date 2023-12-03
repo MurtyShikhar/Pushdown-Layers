@@ -17,21 +17,16 @@ def compute_stack_logprobs(lm, attachment_logits, stack_labels, input_lens):
     ### attachment_logits: b x token x token_to_reduce_with
 
     log_probs = []
-    is_synchronous = lm.synchronous
     for bs, logit_set in enumerate(attachment_logits):
         curr_len = input_lens[bs]
         log_probs_curr = []
         logit_set = logit_set[:curr_len, :curr_len]
         for idx, token_logit in enumerate(logit_set):
-            if is_synchronous and idx == curr_len - 1:
-                ### if we are a synchronous transformer, we don't care what the reduce corresponding to the last prediction is
-                ### because we always predict </s> at the end, and we dont care how it attaches.
+            # if we are a synchronous transformer, we don't care what the reduce corresponding to the last prediction is
+            # because we always predict </s> at the end, and we dont care how it attaches.
+            if idx == curr_len - 1:
                 continue
-
-            if is_synchronous:
-                logits_considered = token_logit[: idx + 2]
-            else:
-                logits_considered = token_logit[: idx + 1]
+            logits_considered = token_logit[: idx + 2]
             log_probs_curr.append(
                 F.log_softmax(logits_considered, dim=0)[stack_labels[bs][idx]].item()
             )
@@ -66,24 +61,19 @@ def tokenizer_helper(
 ):
     inp_list = [tokenizer(s) for s in inp_slice]
     in_lens = [len(s) for s in inp_list]
-    synchronous = lm.synchronous
     if parse_slice_or_labels is not None:
         stack_out = [
             compute_attachment_labels_text(parse, sent)
             for parse, sent in zip(parse_slice_or_labels, inp_slice)
         ]
 
-        if synchronous:
-            stack_labels = [out["attachment_labels"][1:] for out in stack_out]
-        else:
-            stack_labels = [out["attachment_labels"] for out in stack_out]
+        stack_labels = [out["attachment_labels"][1:] for out in stack_out]
         if stack_type_info == "depth":
             stack_tapes = [
                 compute_stack_tape(
                     out["attachment_labels"],
                     out["cstart_info"],
                     with_depth_info=True,
-                    synchronous=synchronous,
                 )
                 for idx, out in enumerate(stack_out)
             ]
@@ -93,7 +83,6 @@ def tokenizer_helper(
                     out["attachment_labels"],
                     out["cstart_info"],
                     None,
-                    synchronous=synchronous,
                 )
                 for idx, out in enumerate(stack_out)
             ]
@@ -210,9 +199,6 @@ def make_preds_with_given_trees(
             en = min(len(sents), st + batch_size)
             sent_slice = sents[st:en]
             parse_slice = parses[st:en]
-            import pdb
-
-            pdb.set_trace()
             inputs, input_lens, stack_labels, stack_tapes = tokenizer_helper(
                 lm,
                 tokenizer,
@@ -234,15 +220,12 @@ def make_preds_with_given_trees(
                 outputs = lm.get_attention_matrices(inputs, input_lens, stack_tapes)
                 all_attn_matrices.append(outputs)
             else:
-                if lm.synchronous:
-                    ### inputs already have sos
-                    next_words = add_eos(
-                        inputs[:, 1:].transpose(0, 1), input_lens - 1, lm.encoder_eos
-                    ).transpose(0, 1)
-                    outputs = lm(inputs, next_words, input_lens, stack_tapes)
+                # inputs already have sos
+                next_words = add_eos(
+                    inputs[:, 1:].transpose(0, 1), input_lens - 1, lm.encoder_eos
+                ).transpose(0, 1)
+                outputs = lm(inputs, next_words, input_lens, stack_tapes)
 
-                else:
-                    outputs = lm(inputs, input_lens, stack_tapes)
                 all_str_logits_curr = outputs["output"].data
 
                 if get_final_answer:

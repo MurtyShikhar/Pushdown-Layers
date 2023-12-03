@@ -64,12 +64,12 @@ python train_transformers.py train.dataset=dyck train.use_stack_tape=True train.
 To train 16 layer pushdown LMs on `BLLIP-LG`, run:
 
 ```
-python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-depth train.vec_dim=1024 train.n_heads=8 +train.dropout=0.1 +train.embedding_dropout=0.1 +train.output_dropout=0.1 train.lr=0.0001 train.use_stack_tape=True recursive_layer.attachment_decisions=True recursive_layer.rec_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15] recursive_layer.stack_pred_layer=16 +train.with_depth_info=True +recursive_layer.compose_keys_and_stack_info=True train.save_dir=path/to/save/dir
+python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-depth train.vec_dim=1024 train.n_heads=8 +train.dropout=0.1 +train.embedding_dropout=0.1 +train.output_dropout=0.1 train.lr=0.0001 train.use_stack_tape=True recursive_layer.attachment_decisions=True recursive_layer.rec_layers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15] recursive_layer.stack_pred_layer=16 +train.with_depth_info=True +recursive_layer.compose_keys_and_stack_info=True train.save_dir=bllip-lg-latest train.train_batch_size=12 train.accum_steps=10
 ```
 
 To train a model without pushdown layers, but with syntactic supervision, run:
 ```
-python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-depth train.vec_dim=1024 train.n_heads=8 +train.dropout=0.1 +train.embedding_dropout=0.1 +train.output_dropout=0.1 train.lr=0.0001 train.save_dir= train.save_dir=path/to/save/dir
+python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-depth train.vec_dim=1024 train.n_heads=8 +train.dropout=0.1 +train.embedding_dropout=0.1 +train.output_dropout=0.1 train.lr=0.0001 train.save_dir= train.save_dir=path/to/save/dir train_batch_size=12 train.accum_steps=10
 ```
 
 
@@ -101,5 +101,4 @@ python eval_pushdown_model.py settings.model_dir=../bllip-lg settings.eval_mode=
 Note: To speed up eval, please use sharding
 
 #### SyntaxGym (for surprisal evaluation)
-TODO
-
+We provide all SyntaxGym data inside `sg_test_suites`. Use the script `eval_utils/eval_surprisal.py` to perform evaluation on each of the test suites in SyntaxGym. This script computes surprisal values (using an incremental version of beam search), and computes the unique surprisal formula for each test suite.

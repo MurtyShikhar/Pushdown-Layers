@@ -205,8 +205,8 @@ def train_loop(
 ):
     num_steps = 0
     max_grad_norm = 3
-    train_batch_size = 8
-    accum_steps = 8
+    train_batch_size = args.train_batch_size
+    accum_steps = args.accum_steps
     eval_every = args.eval_every
     max_steps = args.max_steps
 

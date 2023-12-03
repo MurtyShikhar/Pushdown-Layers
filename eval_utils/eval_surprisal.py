@@ -69,12 +69,8 @@ class TestSuiteParser:
         self.answers = [0 for _ in range(len(self.meta_data["data"]))]
 
     def read_test_suite(self):
-        data_file = (
-            "/u/scr/smurty/syntactic-generalization/test_suites/json/{}.json".format(
-                self.test_suite_file
-            )
-        )
-        with open(data_file, "r") as f:
+        data_file = "../data_utils/sg_test_suites/{}.json".format(self.test_suite_file)
+        with open(self.test_suite_file, "r") as f:
             data = json.load(f)
         self.meta_data = {
             "formula": data["predictions"][0]["formula"],
