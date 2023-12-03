@@ -1,0 +1,22 @@
+recursive_layer:
+    depth_embed_init: 0.0
+    fixed_depth_embed: False
+    rec_layers: [0,1,2,3,4,5]
+    stack_pred_layer: 6
+    attachment_decisions: True
+train:
+    data_regime: reg
+    use_stack_tape: False
+    model_load_path: ""
+    save_dir: "" 
+    dataset: dyck
+    encoder_n_layers: 6
+    vec_dim: 512
+    gpu_id: 0
+    n_heads: 4
+    seed: 42
+    lr: 1e-4
+    callback: False
+    dyck_vocab: 20
+    max_steps: 300000
+    eval_every: 3000
