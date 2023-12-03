@@ -76,8 +76,6 @@ python train_transformers.py train.encoder_n_layers=16 train.dataset=bllip-lg-de
 
 ## Inference / Evaluation
 
-
-
 ### Evaluating Dyck Generalization
 To run the depth / length generalization eval from the paper, run the script: `eval_utils/eval_dyck.py`. Here is one example
 
@@ -86,9 +84,16 @@ cd eval_utils
 python eval_dyck.py model_name=/path/to/save/dir/ckpt.pickle eval_type=depth 
 ```
 
-### Preprocessed BLIMP (for evaluation)
+### Evals on Language Tasks
 
-### SyntaxGym (for surprisal evaluation)
+#### Parsing on PTB
+See `eval_utils/eval_ptb.py` for getting model parses on PTB. Make sure to set the `shard_ids` and `num_shards` correctly, since beam search can be slow.
+
+Note: Since PTB requires a license, we provide a small sample file. Replace this with the PTB test set (consisting of 2416 examples). Feel free to send an email to Shikhar Murty for questions about PTB pre-processing.
+
+#### Preprocessed BLIMP (for evaluation)
+
+#### SyntaxGym (for surprisal evaluation)
 
 
 ### Evaluating on BLLIP

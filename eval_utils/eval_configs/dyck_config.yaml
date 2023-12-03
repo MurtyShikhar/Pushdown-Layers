@@ -1,0 +1,22 @@
+hydra:
+    job:
+        chdir: False
+model_name: dummy
+gpu_id: 0
+use_stack_tape: False
+dataset: dyck
+encoder_n_layers: 6
+vec_dim: 128
+n_heads: 4
+seed: 42
+lr: 1e-4
+callback: False
+dyck_vocab: 20
+eval_type: "long_range"
+recursive_layer:
+  depth_embed_init: 0.0
+  fixed_depth_embed: False
+  rec_layers: [0, 1, 2, 3, 4, 5]
+  stack_pred_layer: 6
+  attachment_decisions: True
+  compose_keys_and_stack_info: True

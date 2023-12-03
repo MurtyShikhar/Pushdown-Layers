@@ -21,7 +21,6 @@ from tqdm import tqdm
 from transformers import GPT2Tokenizer
 import torch
 from nltk import Tree
-from eval_surprisal import Evaluator, TestSuiteParser
 from beam_search_util import BeamSearchDepthBased
 from data_utils.text_helpers import attachment_decisions_to_tree
 
@@ -133,6 +132,11 @@ def main(all_args):
 
     with open("{}/{}.pickle".format(args.dir_name, shard_id), "wb") as writer:
         pickle.dump((ground_truth_parses, our_parses), writer)
+
+    # also write the trees to a file
+    with open("{}/trees_{}.txt".format(args.dir_name, shard_id), "w") as writer:
+        for our in our_parses:
+            writer.write(str(our) + "\n")
 
 
 if __name__ == "__main__":

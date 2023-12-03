@@ -1,0 +1,35 @@
+hydra:
+    job:
+        chdir: False
+recursive_layer:
+    depth_embed_init: 0.0
+    fixed_depth_embed: False
+    rec_layers: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    stack_pred_layer: 16
+    attachment_decisions: True
+    compose_keys_and_stack_info: True
+train:
+    data_regime: reg
+    use_stack_tape: True
+    with_depth_info: True
+    model_load_path: ""
+    save_dir: "" 
+    dataset: dyck
+    encoder_n_layers: 16
+    vec_dim: 1024
+    gpu_id: 0
+    n_heads: 8
+    seed: 42
+    lr: 1e-4
+    callback: False
+settings:
+    model_dir: ""
+    data_split: val
+    marginalize: True
+    num_shards: 100
+    shard_id: 0
+    dir_name: "" 
+    beam_size: 300
+    eval_base: False
+    dataset: "bllip-lg-depth"
+    eval_mode: beam
