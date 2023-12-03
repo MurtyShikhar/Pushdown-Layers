@@ -139,7 +139,6 @@ class Evaluator:
         beam_obj,
         tokenizer,
         non_incremental=False,
-        benepar_obj=None,
         stack_type_info=None,
     ):
         ### lm: language model, beam_obj: beam search object, tokenizer: tokenizer corresponding to LM
@@ -148,7 +147,6 @@ class Evaluator:
         self.preprocessor = PreProcessor()
         self.gpt_tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
         self.tokenizer = tokenizer
-        self.benepar_obj = benepar_obj
         self.stack_type_info = stack_type_info
         self.non_incremental = non_incremental
 
@@ -213,8 +211,11 @@ class Evaluator:
         return all_target_idxs
 
     def get_surprisals(self, regions, verbose=False):
-        ### a list of regions which when concatenated with a period and processed by the preprocessor, gives a valid input to the language model
-        ### but some regions can be empty, so we need to take care of that
+        """
+        regions: a list of regions which when concatenated with a period and
+        processed by the preprocessor, gives a valid input to the language model
+        but some regions can be empty, so we need to take care of that
+        """
 
         sent = " ".join([r.lstrip().rstrip() for r in regions if len(r) > 0])
 
@@ -235,28 +236,7 @@ class Evaluator:
             t_end = cumulative_region_subword_lens[idx + 1]
             all_target_idxs.append((t_start, t_end))
 
-        if self.benepar_obj:
-            parse = self.benepar_obj(sent + " .")
-            try:
-                sent_logprobs, parse_logprobs = make_preds_with_given_trees(
-                    self.lm,
-                    self.tokenizer,
-                    [sent_processed],
-                    [parse],
-                    stack_type_info=self.stack_type_info,
-                )
-            except:
-                print(parse)
-                print(regions)
-                print(sent_processed)
-                parse.pretty_print()
-                print(sent)
-
-            sent_logprobs = sent_logprobs[0]
-            parse_logprobs_prev = [0] + parse_logprobs[0][:-1]
-            logprobs = [s + p for s, p in zip(sent_logprobs, parse_logprobs_prev)]
-            best_incremental_parses = None
-        elif self.beam_obj:
+        if self.beam_obj:
             if not self.non_incremental:
                 logprobs, best_incremental_parses, _ = self.run_beam_search(
                     sent_processed
@@ -299,7 +279,7 @@ class Evaluator:
         return logsumexp(total_logprob), beams
 
 
-@hydra.main(config_path="eval_configs", config_name="bllip_config")
+@hydra.main(config_path="eval_configs", config_name="bllip_config_sg")
 def main(all_args):
     args = all_args.settings
     recursive_layer_args = all_args.recursive_layer
