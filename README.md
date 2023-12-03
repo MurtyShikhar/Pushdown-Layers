@@ -11,9 +11,14 @@ conda activate pushdown-lm
 
 Download a pre-trained pushdown-LM (16 layers transformer with pushdown self-attention trained on `BLLIP-LG`):
 ```
-# install huggingface-cli
+# install huggingface-cli if you do not have it
 pip install -U "huggingface_hub[cli]" 
-huggingface-cli download smurty/pushdown-bllip
+```
+
+```python
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id="smurty/pushdown-bllip", filename="model.pt", local_dir="bllip-lg");
+hf_hub_download(repo_id="smurty/pushdown-bllip", filename="vocab.pkl", local_dir="bllip-lg");
 ```
 
 We provide a script for running inference on a pushdown-LM in `eval_utils/eval_pushdown_model.py`. This script can be used to score sentences and obtain parses. Given a file `data_utils/sample_sents.txt` containing sentences you want to score and parse via a trained Pushdown-LM, simply run the following (assuming the above command downloaded the model to `/path/to/save/dir`):
