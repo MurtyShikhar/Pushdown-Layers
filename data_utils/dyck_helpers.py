@@ -3,12 +3,14 @@ import torch
 import string
 from tqdm import tqdm
 import numpy as np
+import argparse
 import random
 from datasets import Dataset as HFDataset
 from vocabulary import WordVocabulary
 
 
 DATA_DIR = "/u/scr/smurty/unbounded-recursion/data_utils"
+
 
 def read_dyck_data(splits, vocab_size, max_depth=10):
     def process(sent):
@@ -415,7 +417,7 @@ def compute_stack_tape(
             for c in curr_constituent:
                 depth[c] += 1
             stack.append(curr_constituent)
-    penalty_matrix[num_words-1] = depth
+    penalty_matrix[num_words - 1] = depth
     return (penalty_matrix > 0).astype(np.int32)
 
 
@@ -522,16 +524,12 @@ def build_datasets_dyck(
     return dataset, in_vocab, in_sentences
 
 
-
-
 if __name__ == "__main__":
-    max_depth = 40
-    vocab = 20
-    dyck_pfsa = DyckPDFA(max_depth, vocab)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--vocab", type=int, default=20)
+    parser.add_argument("--max_depth", type=int, default=10)
+    args = parser.parse_args()
+    dyck_pfsa = DyckPDFA(args.max_depth, args.vocab)
 
     training_strings, paths = get_training_data(dyck_pfsa, 4, 500, data_size=100)
     print(len(training_strings))
-
-    write_to_file(
-        "dyck_data/k-{}_d-{}_train.txt".format(vocab, max_depth), training_strings
-    )

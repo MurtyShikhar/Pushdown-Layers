@@ -29,10 +29,13 @@ python eval_pushdown_model.py settings.model_dir=../bllip-lg settings.eval_mode=
 ```
 
 
-
 ## Get Datasets
 
-### Training on BLLIP
+### Dyck
+
+We provide the generated dyck data in `data_utils/dyck_data/`, produced using scripts in `data_utils/dyck_helpers.py`
+
+### BLLIP
 
 To get the `BLLIP-LG` datasets we use for training our models, please follow the instructions [here](https://github.com/IBM/transformers-struct-guidance). Once you have `BLLIP-LG` store it inside `data_utils` and run:
 
@@ -43,13 +46,9 @@ python process_bllip.py
 
 This script tokenizes the dataset using the GPT2 tokenizer, and converts every parse tree into unlabeled binarized trees.
 
-### Training on WikiTrees
+### WikiTrees
 
 WIP. Please send Shikhar Murty an email (can be found on the paper link) if you urgently need the WikiTrees dataset.
-
-## Quickstart (I just want to run inference)
-
-Suppose you have some text, parsed according to the above pre-processing scheme.
 
 ## Training
 Note: This repository uses WandB for logging. Make sure you set your WandB account before training.
@@ -57,7 +56,7 @@ Note: This repository uses WandB for logging. Make sure you set your WandB accou
 ### Pushdown LMs on Dyck
 To train 6 layer pushdown LMs on the `Dyck` dataset, run:
 ```
-train_transformers.py train.dataset=dyck train.use_stack_tape=True train.vec_dim=128 train.callback=True train.save_dir=dyck_model-with-stack-acc-mlp-stack-key-modulator +recursive_layer.compose_keys_and_stack_info=True train.max_steps=10000 train.eval_every=1000
+python train_transformers.py train.dataset=dyck train.use_stack_tape=True train.vec_dim=128 train.callback=True train.save_dir=dyck_model-with-stack-acc-mlp-stack-key-modulator +recursive_layer.compose_keys_and_stack_info=True train.max_steps=10000 train.eval_every=500
 ```
 
 ### Pushdown LMs on BLLIP
