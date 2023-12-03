@@ -92,10 +92,8 @@ See `eval_utils/eval_ptb.py` for getting model parses on PTB. Make sure to set t
 Note: Since PTB requires a license, we provide a small sample file. Replace this with the PTB test set (consisting of 2416 examples). Feel free to send an email to Shikhar Murty for questions about PTB pre-processing.
 
 #### Preprocessed BLIMP (for evaluation)
+TODO
 
 #### SyntaxGym (for surprisal evaluation)
+TODO
 
-
-### Evaluating on BLLIP
-
-### Evaluating Surprisals on SyntaxGym
