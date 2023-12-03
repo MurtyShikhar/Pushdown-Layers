@@ -98,10 +98,11 @@ def load_data(args):
             data = [Tree.fromstring(l.strip()) for l in f.readlines()]
         examples = [(d, flatten(d, add_eos=True)) for d in data]
         return examples
-    elif "blimp" in args.dataset:
-        # this is blimp data, where each example is a tuple of (goodsent, badsent, phenomena)
-        with open("../data_utils/blimp/benepar_parses_depth_or_typed.pkl", "rb") as f:
+    elif args.dataset == "blimp":
+        with open("../data_utils/blimp_processed.pkl", "rb") as f:
             data = [Tree.fromstring(t) for t in pickle.load(f)]
+        # we do not use any of trees from BLIMP as part of the model,
+        # but just to compute parsing accuracy for analysis.
         examples = [(convert_tree_to_tuple(d), flatten(d, add_eos=True)) for d in data]
         return examples
     else:

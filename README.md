@@ -87,12 +87,18 @@ python eval_dyck.py model_name=/path/to/save/dir/ckpt.pickle eval_type=depth
 ### Evals on Language Tasks
 
 #### Parsing on PTB
-See `eval_utils/eval_ptb.py` for getting model parses on PTB. Make sure to set the `shard_ids` and `num_shards` correctly, since beam search can be slow.
+See `eval_utils/eval_ptb.py` for getting model parses on PTB. Make sure to set the `shard_ids` and `num_shards` correctly, since beam search can be slow. 
 
 Note: Since PTB requires a license, we provide a small sample file. Replace this with the PTB test set (consisting of 2416 examples). Feel free to send an email to Shikhar Murty for questions about PTB pre-processing.
 
 #### Preprocessed BLIMP (for evaluation)
-TODO
+We preprocess BLIMP using a GPT-2 tokenizer under `data_utils/blimp.pkl`. Use the `eval_utils/eval_pushdown_layers.py` script to obtain sentence log-likelihoods, which can then be aggregated to get the final BLIMP numbers.
+
+```
+python eval_pushdown_model.py settings.model_dir=../bllip-lg settings.eval_mode=beam settings.dataset=blimp settings.num_shards=-1
+```
+
+Note: To speed up eval, please use sharding
 
 #### SyntaxGym (for surprisal evaluation)
 TODO
