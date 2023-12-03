@@ -1,6 +1,10 @@
 # Pushdown Transformer LMs
 Code Repository for our EMNLP '23 paper: "Pushdown Layers: Encoding Recursive Structure in Transformer Language Models".
 
+<p align="center">
+  <img src="assets/pushdown-teaser.png" width="200" title="Overview of Pushdown-LMs." alt="Overview of Pushdown-LMs.">
+</p>
+
 ## Setup Environment
 ```
 conda env create -f environment.yml
